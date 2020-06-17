@@ -44,7 +44,7 @@ if (isset($_POST['do-register']))
             echo '<script language="javascript">alert("Đăng ký thành công"); window.location="register.php";</script>';
         }
         else {
-            echo '<script language="javascript">alert("Có lỗi trong quá trình xử lý"); window.location="register.php";</script>';
+            echo '<script language="javascript">alert("Có lỗi trong quá trình xử lý."); window.location="register.php";</script>';
         }
     }
 }
