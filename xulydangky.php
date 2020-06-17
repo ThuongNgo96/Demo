@@ -4,24 +4,30 @@ header('Content-Type: text/html; charset=utf-8');
 // Vì tên button submit là do-register nên ta sẽ kiểm tra nếu
 // tồn tại key này trong biến toàn cục $_POST thì nghĩa là người 
 // dùng đã click register(submit)
-if (isset($_POST['do-register']))
+if (isset($_POST['gui']))
 {
     // Lấy thông tin
     // Để an toàn thì ta dùng hàm mssql_escape_string để
     // chống hack sql injection
-    $username   = isset($_POST['username']) ? mysql_escape_string($_POST['username']) : '';
-    $password   = isset($_POST['password']) ? md5($_POST['password']) : '';
-    $email      = isset($_POST['email'])    ? mysql_escape_string($_POST['email']) : '';
-    $phone      = isset($_POST['phone'])    ? mysql_escape_string($_POST['phone']) : '';
-    $hoten      = isset($_POST['hoten'])    ? mysql_escape_string($_POST['hoten']) : '';
-    $diachi     = isset($_POST['address'])    ? mysql_escape_string($_POST['address']) : '';
+   // $username   = isset($_POST['username']); //? //mysqli_escape_string($_POST['username']) : '';
+   // $password   = isset($_POST['password']) ? md5($_POST['password']) : '';
+    $phone      = mysqli_escape_string($conn,$_POST['phone']);
+   // $password   = isset($_POST['password']) ;//? //md5($_POST['password']) : '';
+    $hoten      = isset($_POST['hoten']) ?mysqli_real_escape_string($conn,$_POST['hoten']) : '';
+    $diachi     = mysqli_escape_string($conn,$_POST['address']);
     // Validate Thông Tin Username và Email có bị trùng hay không
-      
+        //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
+    //if (!$username || !$password || !$diachi || !$phone || !$hoten)
+    //{
+     //   echo "Vui lòng nhập đầy đủ thông tin. <a href='javascript: history.go(-1)'>Trở lại</a>";
+      //  exit;
+    //}
     // Kết nối CSDL
-    $conn = mysqli_connect('localhost', 'root', 'vertrigo', 'doantong') or die ('Lỗi kết nối');
+    $conn = mysqli_connect('localhost', 'root', '', 'doantong') or die ('Lỗi kết nối');
     mysqli_set_charset($conn, "utf8");
       
     // Kiểm tra username hoặc email có bị trùng hay không
+    
     $sql = "SELECT * FROM taikhoan WHERE username = '$username' OR email = '$email'";
       
     // Thực thi câu truy vấn
@@ -38,13 +44,13 @@ if (isset($_POST['do-register']))
     }
     else {
         // Ngược lại thì thêm bình thường
-        $sql = "INSERT INTO taikhoan (HoTen, DiaChi, SoDienThoai, UseName,Password) VALUES ('$hoten','$address','$phone','$username', '$password')";
+        $sql = "INSERT INTO taikhoan (HoTen, DiaChi, SoDienThoai, UseName,Password) VALUES ('$hoten','$diachi','$phone','$username ', '$password')";
           
         if (mysqli_query($conn, $sql)){
-            echo '<script language="javascript">alert("Đăng ký thành công"); window.location="register.php";</script>';
+            echo '<script language="javascript">alert("Đăng ký thành công"); window.location="index.php";</script>';
         }
         else {
-            echo '<script language="javascript">alert("Có lỗi trong quá trình xử lý."); window.location="register.php";</script>';
+            echo '<script language="javascript">alert("Có lỗi trong quá trình xử lý"); window.location="register.php";</script>';
         }
     }
 }

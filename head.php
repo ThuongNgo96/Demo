@@ -45,7 +45,7 @@
                 </div>
                 <div class=" mt-4">
                 <a href=" "><button class="qty text-nowrap btn btn-outline-success">Đăng nhập</button></a>
-                <a href="./dangky.php"> <button class=" qty text-nowrap btn btn-outline-success ml-1">Đăng ký</button> </a>
+                <a href="./dangky.html"> <button class=" qty text-nowrap btn btn-outline-success ml-1">Đăng ký</button> </a>
                 </div>
             </div>
         </div>
