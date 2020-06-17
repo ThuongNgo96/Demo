@@ -1,0 +1,83 @@
+a{
+    color: chartreuse;
+}
+#nav_menu1 a:hover{
+text-shadow: #007bff;
+ font-size: 110%;
+}
+a :visited{
+    color: aliceblue;
+}
+a:focus{
+    color: cornsilk;
+}
+#nav_menu1 ul li a{
+    display:block;/* block/inline/inline -block/ */
+    padding:  .5em 0 .5em 1.5em;
+    text-decoration:  none;
+    font-weight: bold;
+    color: #e83e8c;
+}
+#nav_menu1 ul li a:hover{
+    color: chartreuse;
+}
+.phone{
+    background-color: lightpink;
+   
+}
+.space{
+    position: relative;
+    animation: mymove 12s infinite;
+    animation-timing-function: linear;
+}
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 1000px;}
+  }
+  .content_left li>a :hover{
+      color: #1c232c !important;
+      
+
+  }
+  .hover li>a{
+	color: white;
+}
+.hover li>a:hover{
+	color: lime !important;
+}
+.line1{
+border: 2px solid orangered;
+
+}
+/* .product{
+background-image: url(./ANH/pink1.jpg);
+
+} */
+.detail{
+    background-image: url(../ANH/pink1.jpg);
+    
+    
+}
+.trademark img{
+    border-radius: 150px;
+}
+.news{
+    background-color: pink;
+}
+.news a:hover{
+    font-style: 130%;
+}
+.news a :visited{
+    font-style: 130%;
+}
+.footer{
+    background-color: pink;
+    color: red;
+}
+.my-element {
+    display: inline-block;
+    margin: 0 0.5rem;
+  
+    animation: bounce; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 6s; /* don't forget to set a duration! */
+  }
