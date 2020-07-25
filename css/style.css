@@ -1,0 +1,217 @@
+a {
+    color: chartreuse;
+}
+
+#nav_menu1 a:hover {
+    text-shadow: #007bff;
+    font-size: 110%;
+}
+
+a :visited {
+    color: aliceblue;
+}
+
+a:focus {
+    color: cornsilk;
+}
+
+#nav_menu1 ul li a {
+    display: block;
+    /* block/inline/inline -block/ */
+    padding: .5em 0 .5em 1.5em;
+    text-decoration: none;
+    font-weight: bold;
+    color: #e83e8c;
+}
+
+#nav_menu1 ul li a:hover {
+    color: chartreuse;
+}
+
+.phone {
+    background-color: lightpink;
+
+}
+
+.space {
+    position: relative;
+    animation: mymove 12s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes mymove {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: 1000px;
+    }
+}
+
+.content_left li>a :hover {
+    color: #1c232c !important;
+
+
+}
+
+.hover li>a {
+    color: white;
+}
+
+.hover li>a:hover {
+    color: lime !important;
+}
+
+.line1 {
+    border: 2px solid orangered;
+
+}
+
+/* .product{
+background-image: url(./ANH/pink1.jpg);
+
+} */
+.detail {
+    /* background-image: url(../ANH/pink1.jpg); */
+    background-color: pink;
+
+}
+
+.trademark img {
+    border-radius: 150px;
+}
+
+.news {
+    background-color: pink;
+}
+
+.news a:hover {
+    font-style: 130%;
+}
+
+.news a :visited {
+    font-style: 130%;
+}
+
+.footer {
+    background-color: pink;
+    color: red;
+}
+
+.my-element {
+    display: inline-block;
+    margin: 0 0.5rem;
+
+    animation: bounce;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 6s;
+    /* don't forget to set a duration! */
+}
+
+.background-opacity {
+    background-color: darkturquoise;
+}
+
+.background-opacity::before {
+    opacity: 0.6;
+}
+
+.product-detail-position {
+    bottom: 0;
+}
+
+.product-detail-qtt {
+    background-color: deeppink;
+    top: 0px;
+    font-size: 13px;
+    padding: 5px;
+}
+
+.product {
+    background-color: white;
+}
+
+.pad156 {
+    background-color: lightpink
+}
+
+/* Colors */
+.dropdown-custom {
+    width: 15em;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+.dropdown-custom dt a {
+    display: block;
+    height: 2.5em;
+    width: 100%;
+    border: 1px solid #ecf0f1;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.dropdown-custom dt a:hover,
+.dropdown-custom dt a:active {
+    border-color: #bdc3c7;
+}
+
+.dropdown-custom dt span {
+    display: block;
+    padding: 0 1em;
+    line-height: 2.5em;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAYAAACALL/6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHo+AACAQQAA+MoAAIC0AAB48QAA9RwAADw3AAAbzhlfIT4AAACJSURBVHjajNAxCsJAEEbhb5cU4i0sbHIaL6IQTxFPo4VeROwXQs4gKW1cWJZEM90wj5l5f0jDeMXBunqENIw7vLD9A09oIxL6FdsvSCENI2zwxH4BTmgxxeJc92P76cuIpRBuc6K45yZWwzPeleixBOLMr30tWgJZuqwcQJNFy2GzkHeHUMPwGQChFSPmzlJ1WgAAAABJRU5ErkJggg==) no-repeat scroll right center;
+    border-right: 1em solid transparent;
+    cursor: pointer;
+}
+
+.dropdown-custom dd {
+    position: relative;
+}
+
+.dropdown-custom dd ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: -2.5em;
+    width: 100%;
+    list-style: none;
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+    z-index: 999;
+}
+
+.dropdown-custom dd ul li:first-child a:hover {
+    border-radius: 3px 3px 0 0;
+}
+
+.dropdown-custom dd ul li:last-child a:hover {
+    border-radius: 0 0 3px 3px;
+}
+
+.dropdown-custom dd li a {
+    display: block;
+    padding: 0 1em;
+    line-height: 2.5em;
+    text-decoration: none;
+}
+
+.dropdown-custom dd li a:hover {
+    background-color: #2ecc71;
+    color: #fff;
+    cursor: pointer;
+}
+
+.selected {
+    font-weight: 700;
+}
+
+.sum_user{
+        font-size: 30px;
+        background: -webkit-linear-gradient(#eee, #333);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+

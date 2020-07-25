@@ -1,0 +1,90 @@
+.unicode{
+    font-family: Code2000, "TITUS Cyberbit Basic", "Doulos SIL",
+        "Chrysanthi Unicode", "Bitstream Cyberbit",
+        "Bitstream CyberBase", Thryomanes, Gentium, GentiumAlt,
+        "Lucida Grande", "Arial Unicode MS", "Microsoft Sans Serif",
+        "Lucida Sans Unicode";
+    //font-family /**/:inherit; /* resets fonts for everyone but IE6 */
+}
+
+ 
+/*Style the Rating Checkbox*/
+.rating{
+  position: relative;
+  font-size: 2.1em;
+  line-height: 2em;
+  margin-bottom: 0.2em;
+  display: inline-block;
+  box-sizing: border-box;
+
+  > label{
+    @extend .unicode;
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    bottom: -1.2em;
+    left: 0.2em;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1em;
+    width:100%
+  }
+
+  > input {
+    width: 3.4em;
+    height: 100%;
+    vertical-align: top;
+    visibility: hidden;
+    cursor: pointer;
+    box-sizing: border-box;
+  
+    &:checked {
+      /*test adjacent sibling selector to select all until selected*/
+      ~ input:after {
+        color: black;
+        content: "☆";
+      }
+      
+      &:after {
+        content:"★";
+      }
+      
+      + label{
+        visibility: visible;
+      }
+    }
+    
+    &:after {
+      @extend .unicode;
+      
+      width: inherit;
+      height: inherit;
+      
+      content:"★";
+      font-size: 6em;
+      color:orange;
+      visibility:visible;
+      vertical-align:top;
+    }
+    
+    &:hover:after {
+      content:"★"!important;
+      color:rgba(200,200,0,0.8)!important;
+    }
+  }
+}
+
+// center the body content
+// html{
+//   width: 100%;
+//   height: 100%;
+//   display: table;
+// }
+  
+// body {
+//   width: 100%;
+//   height: 100%;
+//   display: table-cell;
+//   text-align: center;
+//   vertical-align: middle;
+// }
