@@ -11,7 +11,7 @@ $product = $db->fetchID('sanpham', $id);
 if (!isset($_SESSION['cart'][$id])) {
     $_SESSION['cart'][$id]['TenSP'] = $product['TenSP'];
     $_SESSION['cart'][$id]['HinhAnh'] = $product['HinhAnh'];
-    $_SESSION['cart'][$id]['DonGia'] = $product['DonGia'];
+    $_SESSION['cart'][$id]['Gia'] = $product['Gia'];
     $_SESSION['cart'][$id]['SoLuong'] = 1;
 } else if ($_SESSION['cart'][$id]['SoLuong'] == $product['SoLuong']) {
     $_SESSION['cart'][$id]['SoLuong'] += 0;

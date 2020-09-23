@@ -9,12 +9,12 @@ include("headAmin.php");
 ?>
 <link rel="shortcut icon" type="image/png" href="../ANH/icon.jpg">
 <div class="container-fluid pt-48 pb-5 mt-4">
-    <div class="row ">
+    <div class="row margin-top-50">
         <?php include("leftAdmin.php") ?>
         <div class="col-md-10 bg-white  ml-sm-auto col-lg-10 px-4">
             <div class="d-flex justify-content-between pt-3" style=" height: 50px;">
                 <div class=" ">
-                    <h2>cập nhật tình trạng gửi đơn hàng </h2>
+                    <h2>Cập nhật tình trạng gửi đơn hàng </h2>
                 </div>
             </div>
             <hr>
@@ -34,18 +34,24 @@ include("headAmin.php");
                 <tbody>
                     <?php
                     if($username["MaPQ"]=="1"){
-                        $sql = "SELECT * FROM donhang WHERE MaTTDH =1 or MaTTDH =2  order by MaDH asc";
+                        $sql = "SELECT * FROM donhang WHERE MaTTDH ='5' or MaTTDH=' 2'  order by MaDH asc";
                     }
                     else{
-                    $sql = "SELECT * FROM donhang WHERE MaNVGiaoHang = $idNV  and '1' <= MaTTDH <= '2' order by MaDH asc";}
+                    // $sql = "SELECT * FROM donhang WHERE MaNVGiaoHang = $idNV  and '1' <= MaTTDH <= '2' order by MaDH asc";}
+                    $sql = "SELECT * FROM donhang WHERE MaNVGiaoHang = $idNV  and  MaTTDH =5  order by MaDH asc";}
                     $bills = $db->fetchsql($sql);
                     foreach ($bills as $row) {
+                        if ($row['IDNguoiNhanKhac'] == 0 || $row['IDNguoiNhanKhac'] == null){
+                            $TK=$db->fetchTK('taikhoan',$row['ID']);
+                        }else{
+                            $TK=$db->fetchTKNNK('nguoinhankhac',$row['IDNguoiNhanKhac']);
+                        }
                     ?>
                         <tr class=" border">
                             <th class="text-center" scope="row"><?php echo $row['MaDH'] ?></th>
-                            <td><?php echo $row['TenNguoiNhan'] ?></td>
-                            <td><?php echo $row['DiaChi'] ?></td>
-                            <td><?php echo $row['SoDienThoai'] ?></td>
+                            <td><?php echo $TK['HoTen'] ?></td>
+                            <td><?php echo $TK['DiaChi'] ?></td>
+                            <td><?php echo $TK['SoDienThoai'] ?></td>
                             <td><?php echo $row['NgayDat'] ?></td>
                             <td><?php echo number_format($row['TongTien']) . ' đ' ?></td>
                             <td>
@@ -56,12 +62,14 @@ include("headAmin.php");
                             </td>
                             <td class="d-flex">
                                 <?php
-                                if ($row['MaTTDH'] == 2) {          
+                                if ($row['MaTTDH'] == '5') {          
                                 ?>
-                                <button class=" m-auto btn btn-success">Đang gửi</button>
-                                <?php }else{?>
-                                <button value="<?php echo $row['MaDH'] ?>" class="guihang m-auto btn btn-danger">Gửi</button>
-                            <?php } ?>
+                               <button value="<?php echo $row['MaDH'] ?>" class="guihang m-auto btn btn-warning">  Gửi</button>
+                                <?php } else { ?>
+                                    <button disabled value="<?php echo $row['MaDH'] ?>" class="m-auto btn btn-success"> đơnĐang vận chuyển  </button>
+                                   
+                                   
+                                <?php } ?> 
                             </td>
                         </tr>
                     <?php }

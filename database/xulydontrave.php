@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Update mã tình trạng đơn hàng thành TT05( Trả về) trong bảng donhang
     $update = $db->update('donhang', array('MaTTDH' => '4'), array('MaDH' => $idDH));
     // Tìm các dòng đơn hàng từ  bảng chitietDB có id đơn hàng lấy từ XuLyDonTraVe
-    $chitietDH = $db->fetchAllHoaDoninCTDH('chitietdonhang', $idDH);
+    $chitietDH = $db->fetchAllCTHDbyMaHD('chitietdonhang', $idDH);
     foreach ($chitietDH as $value) {
         // Tìm các sản phẩm bảng sanpham có Masp = Masp trong bảng chitietdonhang
         $sanpham = $db->fetchID('sanpham', $value['MaSP']);

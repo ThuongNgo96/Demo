@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="./ANH/icon.jpg">
     <link rel="stylesheet" href="./css/style1.css">
@@ -26,14 +29,14 @@
                     </div>
                     <h2 class="text-center"> ĐĂNG KÝ</h2>
                     <div>
-                        <label class=" text"> Họ và tên: </label>
+                        <label class=" text "> Họ và tên: </label>
                         <div class="d-flex justify-content-center">
-                            <input class="form-control w-75 " type="text" name="hoten" required>
+                            <input class="form-control w-75 btn-outline-success" type="text" name="hoten" required>
                         </div>
                         <div>
                             <label> Địa chỉ:</label>
                             <div class="d-flex justify-content-center">
-                                <input class="form-control w-75 " type="text" name="address" required>
+                                <input class="form-control w-75 btn-outline-success" type="text" name="address" required>
                             </div>
                         </div>
 
@@ -41,7 +44,7 @@
                         <div>
                             <label> Số điện thoại:</label>
                             <div class="d-flex justify-content-center">
-                                <input class="form-control w-75" type="text" name="phone" required>
+                                <input class="form-control w-75 btn-outline-success" type="text" name="phone" required pattern="^\d{10}$"  title="vui lòng xem lại sdt,  nhập đúng định dạng 10 chữ số của SDT">
                             </div>
                         </div>
                         <!-- <div>
@@ -61,17 +64,17 @@
 
                             <label for="username">Tên đăng nhập</label>
                             <div class="d-flex justify-content-center">
-                                <input type="text" class="form-control w-75" placeholder=" username" name="username" id="username" required>
+                                <input type="text" class="form-control w-75 btn-outline-success" placeholder=" username" name="username" id="username" required>
                             </div>
                         </div>
 
                         <label for="password">Mật khẩu</label>
                         <div class="d-flex justify-content-center">
-                            <input class="form-control w-75 " type="password" placeholder="******" name="password" id="password" required>
+                            <input class="form-control w-75 btn-outline-success" type="password" placeholder="******" name="password" id="password" required>
                         </div>
                         <label for="password-repeat">Nhập lại mật khẩu</label>
                         <div class="d-flex justify-content-center">
-                            <input class="form-control w-75 " type="password" placeholder="******" name="nhaplaimk" id="password-repeat" required>
+                            <input class="form-control w-75 btn-outline-success" type="password" placeholder="******" name="nhaplaimk" id="password-repeat" required>
                         </div>
                         <div class=" text-center mt-5">
                             <button type="submit" class="btn btn-success mb-5 " name="gui">Đăng ký</button>

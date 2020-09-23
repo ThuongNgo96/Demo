@@ -12,6 +12,7 @@ $danhmuc = $db->fetchAll("danhmuc");
     <meta name="Description" content="Enter your description here" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
     <link rel="shortcut icon" type="image/png" href="ANH/icon.jpg">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
@@ -20,6 +21,7 @@ $danhmuc = $db->fetchAll("danhmuc");
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/owl.carousel.min.css">
     <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/style1.css">
     <title>Sakura</title>
 </head>
 
@@ -31,8 +33,8 @@ $danhmuc = $db->fetchAll("danhmuc");
         <!--  -->
         <section class=" container-fluid mt-3 ">
             <div class="row">
-                <div class="content_left col-2 bg-light rounded ">
-                    <nav class="navbar navbar-expand-lg navbar-light mt-5 px-0">
+                <div class="content_left col-lg-2 col-sm-6 bg-light rounded ">
+                    <nav class="navbar navbar-expand navbar-light mt-5 px-0">
                         <div class="collapse navbar-collapse " id="navbarNavDropdown">
                             <ul class=" flex-column navbar-nav w-100">
                                 <li class="nav-item dropdown">
@@ -151,7 +153,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                 </div>
                 <!-- --- end menu -->
 
-                <div class="col-6 pr-0">
+                <div class="col-lg-6 col-sm-12 pr-0">
                     <img name="myimage" class="w-100 h-100" src="./ANH/nen1.jpg" />
                     <script type="text/javascript">
                         window.onload = function() {
@@ -176,7 +178,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                     </script>
                 </div>
                 <!-- end baner -->
-                <div class="col-4">
+                <div class="col-lg-4">
                     <img class="w-100 h-100" src="./ANH/bang3.png">
                 </div>
             </div>
@@ -190,10 +192,10 @@ $danhmuc = $db->fetchAll("danhmuc");
             <div class="host_product">
                 <div class=" ">
                     <div class="row px-0 ">
-                        <div class=" col-5">
+                        <div class=" col-lg-5 col-sm-12">
                             <h4 class=" text-success"><i class="fab fa-hotjar"></i> Sản phẩm bán chạy</h4>
                         </div>
-                        <div class=" col-7">
+                        <div class=" col-lg-7 col-sm-12">
                             <ul class="nav float-right ">
                                 <li class="nav-item p-1 ">
                                     <a href="" class="btn btn-outline-danger text-secondary " style="background-color: lightpink;">Son môi</a>
@@ -235,7 +237,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                             </div>
                             </div>
                             <div class="px-2 d-flex justify-content-between" style="height:25px">
-                                <p class=" text-danger"><?php echo number_format($row['DonGia']) . ' đ' ?></p>
+                                <p class=" text-danger"><?php echo number_format($row['GiaGoc']-($row['GiaGoc'])*$row['GiamGia']/100) . ' đ' ?></p>
                                 <strike class=" text-dark">
                                     <?php echo number_format($row['GiaGoc']) . ' đ' ?></strike>
                             </div>
@@ -259,16 +261,16 @@ $danhmuc = $db->fetchAll("danhmuc");
 
             <div class="row mt-3">
 
-                <h4 class="text-danger col-5"><i class="far fa-registered"></i> Thương hiệu nổi bật</h4>
-                <div class=" col-7">
+                <h4 class="text-danger col-lg-5 col-sm-6"><i class="far fa-registered"></i> Thương hiệu nổi bật</h4>
+                <div class="col-lg-7 col-sm-6">
                     <ul class="nav float-right ">
                         <li class="nav-item p-1 ">
                             <a href="" class="btn btn-outline-danger text-secondary " style="background-color: lightpink;">Xem thêm</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-2 container trademark ">
-                    <div class="">
+                <div class="col-lg-2 container trademark">
+                    <div class=" ">
                         <a href=""><img class="card-img-top" src="./ANH/thh1.jpg" alt="Card image">
                             <div class="card-img-overlay">
 
@@ -277,7 +279,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                     </div>
                 </div></a>
 
-                <div class="col-2 container trademark ">
+                <div class="col-lg-2   container trademark  ">
                     <div class="">
                         <a href=""><img class="card-img-top" src="./ANH/byme.JPG" alt="Card image">
                             <div class="card-img-overlay">
@@ -287,7 +289,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                     </div>
                 </div></a>
 
-                <div class="col-2 container trademark ">
+                <div class="col-lg-2  container trademark  ">
                     <div class="">
                         <a href=""><img class="card-img-top" src="./ANH/senka.jpg" alt="Card image">
                             <div class="card-img-overlay">
@@ -297,7 +299,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                     </div>
                 </div></a>
 
-                <div class="col-2 container trademark ">
+                <div class="col-lg-2  container trademark   ">
                     <div class="">
                         <a href=""><img class="card-img-top" src="./ANH/thuonghieu3.jpg" alt="Card image">
                             <div class="card-img-overlay">
@@ -307,7 +309,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                     </div>
                 </div></a>
 
-                <div class="col-2 container trademark ">
+                <div class="col-lg-2  container trademark  ">
                     <div class="">
                         <a href=""><img class="card-img-top" src="./ANH/thuonghieu4.jpg" alt="Card image">
                             <div class="card-img-overlay">
@@ -317,7 +319,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                     </div>
                 </div></a>
 
-                <div class="col-2 container trademark ">
+                <div class="col-lg-2  container trademark  ">
                     <div class="">
                         <a href=""><img class="card-img-top" src="./ANH/vichy.jpg" alt="Card image">
                             <div class="card-img-overlay">
@@ -328,7 +330,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                 </div></a>
 
             </div>
-            <hr>
+            
         </div>
     </section>
     <hr class=" line1">
@@ -337,10 +339,10 @@ $danhmuc = $db->fetchAll("danhmuc");
         <div class="uudai container-fluid">
 
             <div class="row mt-3 border-danger">
-                <div class="col-5">
-                    <h4 class="text-danger col-5"><i class="fas fa-apple-alt"></i> Ưu đãi thường kỳ</h4>
+                <div class="col-lg-5 col-sm-12">
+                    <h4 class="text-danger col-lg-5 col-sm-12"><i class="fas fa-apple-alt"></i> Ưu đãi thường kỳ</h4>
                 </div>
-                <div class=" col-7">
+                <div class=" col-lg-7 col-sm-12">
                     <ul class="nav float-right ">
                         <li class="nav-item p-1 ">
                             <a href="" class="btn btn-outline-danger text-secondary mb-3 " style="background-color: lightpink;">Xem thêm</a>
@@ -348,20 +350,21 @@ $danhmuc = $db->fetchAll("danhmuc");
                     </ul>
                 </div>
                 <div class="col-12">
-                    <div class=" row">
-                        <div class="col-2   ">
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-12">
                             <img src="./ANH/uudai1.jpg">
-                            <a href="" class="btn btn-outline-danger text-secondary " style="background-color: lightpink;">Dưỡng da</a>
+                            <div class="">
+                            <a href="" class="btn btn-outline-danger text-secondary  " style="background-color: lightpink;">Dưỡng da</a>
                             <a href="" class="btn btn-outline-danger text-secondary mt-1 " style="background-color: lightpink;">Trị Thâm</a>
                             <a href="" class="btn btn-outline-danger text-secondary mt-1 " style="background-color: lightpink;">Mặt nạ</a>
-                            <a href="" class="btn btn-outline-danger text-secondary mt-1 " style="background-color: lightpink;">Nươc hoa hồng</a>
-
+                            <a href="" class="btn btn-outline-danger text-secondary mt-1 " style="background-color: lightpink;">Nước hoa hồng</a>
+                            </div>
                         </div>
-                        <div class="col-10">
+                        <div class="col-lg-10 col-sm-12">
                             <div class="row">
-                                <div class="col-4"><img src="./ANH/uudai1.1.jpg"></div>
-                                <div class="col-4"><img src="./ANH/uudai1.2.jpg"></div>
-                                <div class="col-4"><img src="./ANH/uudai1.2.jpg"></div>
+                                <div class="col-lg-4 col-sm-12"><img src="./ANH/uudai1.3.jpg"></div>
+                                <div class="col-lg-4 col-sm-12"><img src="./ANH/uudai1.2.jpg"></div>
+                                <div class="col-lg-4 col-sm-12"><img src="./ANH/uudai1.4.jpg"></div>
                             </div>
                             <!--  showw sp -->
                             <ul class="row mt-3 pl-0 pr-3">
@@ -384,7 +387,8 @@ $danhmuc = $db->fetchAll("danhmuc");
                                             </div>
                                             </div>
                                             <div class="px-2 d-flex justify-content-between mt-1" style="height:25px">
-                                                <p class=" text-danger"><?php echo number_format($row['DonGia']) . ' đ' ?></p>
+                                           
+                                                <p class=" text-danger"><?php echo number_format($row['GiaGoc']-($row['GiaGoc'])*$row['GiamGia']/100) . ' đ' ?></p>
                                                 <strike class=" text-dark">
                                                     <?php echo number_format($row['GiaGoc']) . ' đ' ?></strike>
                                             </div>
@@ -408,14 +412,14 @@ $danhmuc = $db->fetchAll("danhmuc");
         </div>
         </div>
     </section>
-
+    <hr class=" line1">
     <section class=" container-fluid">
         <div class="news row">
-            <div class=" col-6">
-                <a href="" class="text-decoration-none"> <img class="img2 my-5 ml-4" src="./ANH/duongda.jpg"></a>
+            <div class=" col-lg-6 ">
+                <a href="" class="text-decoration-none"> <img class="img2 my-5 ml-4" src="./ANH/duongda.jpg"  ></a>
             </div>
-            <div class=" col-6">
-                <a href="">
+            <div class=" col-lg-6 col-sm-12 ">
+                <a href="" class="">
                     <h2 class=" font-italic pt-5 animate__animated animate__bounce animate__delay-2s  text-muted"> Muốn dưỡng da trắng?</h2><br>
                     <h3 class="animate__animated animate__bounce "> Nhất định bạn phải biết những điều này!</h3>
                     <p class=" lead pt-3 mr-4">Sở hữu làn da trắng sáng luôn là mong muốn của hầu hết các chị em, đặc biệt là phụ nữ Á Đông.
@@ -427,10 +431,11 @@ $danhmuc = $db->fetchAll("danhmuc");
                 </a>
             </div>
     </section>
+    <hr class=" line1">
     <!-- cách chăm da -->
     <section class=" mt-2 container-fluid ">
         <div class=" row">
-            <div class=" col-3 pl-5 ">
+            <div class=" col-lg-3 pl-5 col-sm-6">
                 <div class="card" style="width:280px ;height:400px">
                     <img class="card-img-top" src="./ANH/chamsoc1.jpg" alt="Card image" style="width:100%">
                     <div class="card-body">
@@ -441,7 +446,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                 </div>
 
             </div>
-            <div class=" col-3 ">
+            <div class=" col-lg-3 col-sm-6 ">
                 <div class="card" style="width:270px; height:400px">
                     <img class="card-img-top" src="./ANH/chamsoc2.jpg" alt="Card image" style="width:100%">
                     <div class="card-body">
@@ -451,7 +456,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                     </div>
                 </div>
             </div>
-            <div class="col-3 ">
+            <div class="col-lg-3 col-sm-6">
 
                 <div class="card" style="width:270px;height:400px">
                     <img class="card-img-top" src="./ANH/chamda5.jpg" alt="Card image" style="width:100%">
@@ -464,13 +469,13 @@ $danhmuc = $db->fetchAll("danhmuc");
                 </div>
             </div>
 
-            <div class="col-3 pl-4">
+            <div class="col-lg-3 col-sm-6 pl-4">
 
                 <div class="card" style="width:280px;height:400px">
                     <img class="card-img-top" src="./ANH/chamda.jpg" alt="Card image" style="width:100%">
                     <div class="card-body">
                         <h4 class="card-title">Tránh nắng cho da</h4>
-                        <p class="card-text"> Hè làm da bạn trở lên đen xạm...</p>
+                        <p class="card-text"> Hè làm da bạn trở lên đen xạm, đừng làm mất tự tin...</p>
                         <a href="#" class="btn btn-primary">Tìm hiểu</a>
                     </div>
 

@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         [
             "TenSP" => postInput('TenSP'),
             "GiaGoc" => postInput('price'),
-            "DonGia"=>postInput('pricesell'),
+            "GiamGia"=>postInput('pricesell'),
             "SoLuong" => postInput('soluong'),
             "MaDM" => postInput('category_id'),
         ];
@@ -68,6 +68,7 @@ include("./../../admin/headAmin.php")
     <div class="row ">
         <?php include("./../../admin/leftAdmin.php") ?>
         <div class="col-md-10 bg-white  ml-sm-auto col-lg-10 px-4 mt-5">
+            <h1 class="text-center text-danger"> Sửa sản phẩm:</h1>
             <div class="row">
                 <form class="col-8 offset-2" method="post" action="./suasp.php" enctype="multipart/form-data">
                     <div class="form-group">
@@ -94,8 +95,8 @@ include("./../../admin/headAmin.php")
                         <?php endif  ?>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress2">Gía giảm</label>
-                        <input type="number" class="form-control" value="<?php echo $Editproduct['DonGia'] ?>" id="inputAddress2" placeholder="" name="pricesell" required>
+                        <label for="inputAddress2">Giảm %</label>
+                        <input type="number" class="form-control" value="<?php echo $Editproduct['GiamGia'] ?>" id="inputAddress2" placeholder="" name="pricesell" required>
                         <?php
                         if (isset($error['pricesell'])) :
                         ?>
@@ -144,7 +145,7 @@ include("./../../admin/headAmin.php")
                         </div>
                     </div>
                     <div class="col-12 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
+                        <button type="submit" class="btn btn-primary">Sửa Sản Phẩm</button>
                     </div>
                 </form>
             </div>

@@ -29,18 +29,37 @@ if (isset($_POST['login'])) {
         exit;
     }
 
+    // $name_session = "";
+
+   
     //Lưu tên đăng nhập
     //Lưu tên đăng nhập
-    $_SESSION['useradmin'] = $username;
+    $_SESSION["useradmin"] = $username;
     $phanquyen =$db->fetchidByUsername('nhanvien', $username);
-    if ($phanquyen['MaPQ'] == '1' || $phanquyen['MaPQ']=='2') {
+
+    // if($phanquyen['MaPQ'] == 1){
+    //     $_SESSION["useradmin"] = $username;
+    // }else{
+    //     if( $row['MaPQ']==4){
+    //         $_SESSION["nvbanhang"] = $username1;
+    //     }
+    //     else{
+    //         if($row['MaPQ'] == 2){
+    //             $_SESSION["shipper"] = $username2;
+
+    //         }
+    //     }
+
+    // }
+
+    if ($phanquyen['MaPQ'] == '1' || $phanquyen['MaPQ']=='2'||$phanquyen=='4') {
         header('location: ./index.php');
     }
     // else if($phanquyen['MaPQ']=='2'){
     //     header('location')   
     // }
     else {
-        header('Location: ./../index.php');
+        header('Location: ./index.php');
         die();
     }
 }
@@ -56,7 +75,7 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="./../css/style.css">
     <link rel="stylesheet" href="./../css/bootstrap.css">
     <link rel="shortcut icon" type="image/png" href="ANH/icon.jpg">
-    <title>Document</title>
+    <title>Admin</title>
 </head>
 
 <body style="height: 100vh ; background-image:url(https://data.whicdn.com/images/84259561/original.gif); background-size:cover;">

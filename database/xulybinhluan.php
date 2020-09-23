@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         die;
     }
     $data1 = [
-        'MaTK' => $MaTK['ID'],
+        'MaTK' => $MaTK['MaTK'],
         'MaSP' => $idSP,
         'BinhLuan' => $comment,
     ];

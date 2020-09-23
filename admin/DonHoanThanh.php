@@ -7,7 +7,7 @@ include("headAmin.php");
 <link rel="shortcut icon" type="image/png" href="../ANH/icon.jpg">
 <title>Duyet don</title>
 <div class="container-fluid pt-48 pb-5 mt-4 ">
-    <div class="row ">
+    <div class="row margin-top-50">
         <?php include("leftAdmin.php") ?>
         <div class="col-md-10 bg-white  ml-sm-auto col-lg-10 px-4">
            

@@ -2,7 +2,7 @@
     <footer>
     <div class="container-fluid footer">
         <div class="row  footer">
-            <div class="col-4">
+            <div class="col-lg-4 col-sm-12">
                 <ul class="nav flex-column hover ">
                     <li class="nav-item">
                         <h4 class=" nav-link text-danger text-danger">Mỹ phẩm SAKURA Đà Nẵng</h4>
@@ -21,7 +21,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-sm-12">
                 <ul class="nav flex-column hover ">
                     <li class="nav-item">
                         <h4 class="text-danger nav-link">Thông tin về chúng tôi</h4>
@@ -37,7 +37,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-3">
+            <div class="col-lg-3 col-sm-12">
                 <ul class="nav flex-column hover ">
                     <li class="nav-item">
                         <div class="nav-link">

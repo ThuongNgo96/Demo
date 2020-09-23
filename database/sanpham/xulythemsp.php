@@ -7,8 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         [
             "TenSP" => postInput('TenSP'),
             "GiaGoc" => postInput('price'),
-            "DonGia" => postInput('pricesell'),
+            "GiamGia" => postInput('pricesell'),
             "SoLuong" => postInput('soluong'),
+            "Gia"=>postInput('price')-(postInput('price')*postInput('pricesell')/100),
             "MaDM" => postInput('category_id'),
             "ChiTietSP"=>postInput('ChiTietSP')
         ];

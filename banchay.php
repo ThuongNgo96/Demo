@@ -26,7 +26,7 @@ include('homedanhmuc.php')
                                             <div class="pad156">
                                                 <img class="img-fluid mx-4" style="width: 170px;" src="ANH/<?php echo $row['HinhAnh'] ?>" alt="">
                                                 <div class=" d-flex justify-content-between" style="height:25px">
-                                                    <p class="text-danger"><?php echo number_format($row['DonGia']) . ' đ' ?></p>
+                                                    <p class="text-danger"><?php echo number_format($row['Gia']) . ' đ' ?></p>
                                                    
                                                 </div>
 

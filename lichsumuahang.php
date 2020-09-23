@@ -2,6 +2,7 @@
 
 require_once __DIR__ . "./ImportFile/importFile.php";
 $id = $db->fetchidByUsername('taikhoan', $_SESSION['username']);
+$idtk = $id['ID'];
 $bill = $db->fetchBillByUsername('donhang', $id['ID']);
 $ngay = postInput('firtsdate');
 $ngay1 = postInput('lastdate')
@@ -40,17 +41,17 @@ $ngay1 = postInput('lastdate')
         </thead>
         <tbody>
             <?php
-            $sql = "SELECT * FROM DonHang WHERE MaTTDH = 2 or MaTTDH = 3 or MaTTDH =4 or MaTTDH = 10 ";
+            $sql = "SELECT * FROM DonHang WHERE ID = $idtk and (MaTTDH = 2 or MaTTDH = 11 or MaTTDH =12 or MaTTDH = 10)";
             $historyBills = $db->fetchsql($sql);
             foreach ($historyBills as $lichsumua) {
                 switch ($lichsumua['MaTTDH']) {
                     case '2':
                         $tinhtrang = "Đang giao hàng";
                         break;
-                    case '3':
-                        $tinhtrang = "Đơn hàng đã được giao";
+                    case '11':
+                        $tinhtrang = "Đã Nhận hàng ";
                         break;
-                    case '4':
+                    case '12':
                         $tinhtrang = "Trả lại đơn hàng";
                         break;
                     case '10':

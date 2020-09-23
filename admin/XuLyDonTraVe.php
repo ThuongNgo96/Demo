@@ -8,7 +8,7 @@ include("headAmin.php");
 ?>
 <link rel="shortcut icon" type="image/png" href="../ANH/icon.jpg">
 <div class="container-fluid pt-48 pb-5 mt-4">
-    <div class="row ">
+    <div class="row margin-top-50  ">
         <?php include("leftAdmin.php") ?>
         <div class="col-md-10 bg-white  ml-sm-auto col-lg-10 px-4">
             <div class="d-flex justify-content-between pt-3" style=" height: 50px;">
@@ -39,16 +39,21 @@ include("headAmin.php");
                     }
                     $bills = $db->fetchsql($sql);
                     foreach ($bills as $row) {
+                        if ($row['IDNguoiNhanKhac'] == 0 || $row['IDNguoiNhanKhac'] == null){
+                            $TK=$db->fetchTK('taikhoan',$row['ID']);
+                        }else{
+                            $TK=$db->fetchTKNNK('nguoinhankhac',$row['IDNguoiNhanKhac']);
+                        }
                     ?>
                         <tr class=" border">
                             <th scope="row"><?php echo $row['MaDH'] ?></th>
-                            <td><?php echo $row['TenNguoiNhan'] ?></td>
-                            <td><?php echo $row['DiaChi'] ?></td>
-                            <td><?php echo "0" . $row['SoDienThoai'] ?></td>
+                            <td><?php echo $TK['HoTen'] ?></td>
+                            <td><?php echo $TK['DiaChi'] ?></td>
+                            <td><?php echo "0" . $TK['SoDienThoai'] ?></td>
                             <td><?php echo $row['NgayDat'] ?></td>
                             <td><?php echo number_format($row['TongTien']) . ' đ' ?></td>
                             <td class="d-flex">
-                                <button value="<?php echo $row['MaDH'] ?>" class="trave m-auto btn btn-danger">Hoàn trả</button>
+                                <button value="<?php echo $row['MaDH'] ?>" class="trave m-auto btn btn-danger">Khách trả lại </button>
                                 <button value="<?php echo $row['MaDH'] ?>" class="xongdon m-auto btn btn-success">Đã Xong</button>
                             </td>
                         </tr>

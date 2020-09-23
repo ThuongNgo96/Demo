@@ -41,17 +41,17 @@ require_once __DIR__ . "./ImportFile/importFile.php";
                             <div class="row">
                                 <div class="col-sm-3 hidden-xs"><img src="./ANH/<?php echo $value['HinhAnh'] ?>" alt="Sản phẩm 1" class="img-responsive" width="100">
                                 </div>
-                                <div class="col-sm-9">
+                                <div class="col-sm-9 ml-3">
                                     <h4 id="sp<?php echo $key ?>" class="nomargin"><?php echo $value['TenSP'] ?></h4>
                                     <p>Mô tả của sản phẩm 1</p>
                                 </div>
                             </div>
                         </td>
-                        <td data-th="Price"><?php echo number_format($value['DonGia']) . ' đ' ?></td>
+                        <td data-th="Price"><?php echo number_format($value['Gia']) . ' đ' ?></td>
                         <td data-th="Quantity">
                             <input id="<?php echo $key ?>" class="form-control" min="1" type="number" value="<?php echo $value['SoLuong'] ?>">
                         </td>
-                        <td data-th="Subtotal" class="text-center"><?php echo number_format($total = $value['DonGia'] * $value['SoLuong']) . ' đ' ?></td>
+                        <td data-th="Subtotal" class="text-center"><?php echo number_format($total = $value['Gia'] * $value['SoLuong']) . ' đ' ?></td>
                         <td class="actions d-flex " data-th="">
                             <button value="<?php echo $key ?>" class="update m-auto btn btn-info btn-sm"><i class="fa fa-edit">Sửa</i>
                             </button>
@@ -67,21 +67,26 @@ require_once __DIR__ . "./ImportFile/importFile.php";
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="3"><a href="./index.php" class="btn btn-warning"><i class="fa fa-angle-left w-25"></i> Tiếp tục mua hàng</a>
+                    <td colspan="4"><a href="./index.php" class="btn btn-warning" style=" width:250px"><i class="fa fa-angle-left w-25"></i> Tiếp tục mua hàng</a>
                     </td>
-                    <td colspan="3" class="hidden-xs"> </td>
+                    <!-- <td colspan="3" class="hidden-xs"> </td> -->
                     <td class="hidden-xs text-center">
                         <strong>
                             <?php
                             $_SESSION['sum'] = $sum;
-                            echo number_format($_SESSION['sum']) . ' đ'
+                            echo "Tổng tiền : "  .number_format($_SESSION['sum']) . ' đ'
                             ?>
                         </strong>
                     </td>
-                    <td><a href="./thanhtoan.php" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+                    <td class="col-3"><a href="./thanhtoan.php" class="btn btn-success btn-block" style=" width:200px"> đặt hàng cho mình<i class="fa fa-angle-right"></i></a>
+                    </td>
+                   
+                </td>
+                 <td class="col-3"><a href="./thanhtoannguoikhac.php" class="btn btn-success btn-block" style=" width:200px"> Đặt cho người khác <i class="fa fa-angle-right"></i></a>
                     </td>
                 </tr>
             </tfoot>
+     
         </table>
     </div>
 

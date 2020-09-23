@@ -27,10 +27,10 @@ $danhmuc = $db->fetchAll("danhmuc");
 
 
 
-    <div class="container-fluid pt-48 pb-5 mt-4 " style=" margin-bottom: 150px;">
-        <div class="row" style="height: 100vh;">
+    <div class="container-fluid pb-5 mt-1 h-100vh" style="height: 900px;">
+        <div class="row margin-top-50 h-100">
             <?php include("leftAdmin.php") ?>
-            <div class="col-md-10 bg-white  ml-sm-auto col-lg-10 px-4">
+            <div class="col-10  bg-white  ml-sm-auto col-lg-10 px-4" >
                 <div class="d-flex justify-content-between pt-3" style=" height: 50px;">
                     <div class=" col-12 ">
                         <h2>Cập nhật Danh Mục Sản Phẩm </h2>
@@ -56,7 +56,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                             </div>
 
                         <?php endif; ?>
-                        <div class=" ">
+                        <div class="col-12 mt-5">
                             <a href="../database/danhmuc/capnhatdanhmuc.php" <button class="btn btn-outline-info" name="btnThem" id="btnThem"> Thêm mới</button></a>
                             <table class="table table-hover table-bordered mt-3">
                                 <thead class="thead-dark">
@@ -64,7 +64,7 @@ $danhmuc = $db->fetchAll("danhmuc");
                                         <th class="text-center" scope="col"> STT</th>
                                         <th class="text-center" scope="col">Tên Danh Mục</th>
                                         <th class="text-center" scope="col">Ngày Lập</th>
-                                        <th class=" text-center" scope="col"> Trạng Thái</th>
+                                        <!-- <th class=" text-center" scope="col"> Trạng Thái</th> -->
                                         <th class="text-center" scope="col">Thao Tác</th>
 
 
@@ -83,10 +83,10 @@ $danhmuc = $db->fetchAll("danhmuc");
                                             <input class="form-control text-center" id="nameDM<?php echo $row['MaDM'] ?>" type="text" name="TenDM" value="<?php echo $row['TenDM'] ?>">
                                         </td>
                                         <td class="text-center"><?php echo $row['NgayTao'] ?></td>
-                                        <td class="text-center">
+                                        <!-- <td class="text-center">
 
                                             <a> <button value="<?php echo $row['MaDM'] ?>" class="duyet m-auto btn btn-warning"> ẩn </button></a>
-                                        </td>
+                                        </td> -->
 
                                         <td class="d-flex text-center">
                                             <button value="<?php echo $row['MaDM'] ?>" class="delete m-auto btn btn-danger">Xóa</button>

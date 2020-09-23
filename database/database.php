@@ -110,6 +110,20 @@ class Database
         mysqli_query($this->link, $sql) or die(" Lỗi Truy Vấn delete   --- " . mysqli_error($this->link));
         return mysqli_affected_rows($this->link);
     }
+    public function deleteDH($table, $id)
+    {
+        $sql = "DELETE FROM {$table} WHERE MaDH = $id ";
+
+        mysqli_query($this->link, $sql) or die(" Lỗi Truy Vấn delete   --- " . mysqli_error($this->link));
+        return mysqli_affected_rows($this->link);
+    }
+    public function deleteCTDH($table, $id)
+    {
+        $sql = "DELETE FROM {$table} WHERE id = $id ";
+
+        mysqli_query($this->link, $sql) or die(" Lỗi Truy Vấn delete   --- " . mysqli_error($this->link));
+        return mysqli_affected_rows($this->link);
+    }
     public function deleteDM($table,  $id)
     {
         $sql = "DELETE FROM {$table} WHERE MaDM = $id ";
@@ -130,7 +144,7 @@ class Database
 
     public function deleteTK($table,  $id)
     {
-        $sql = "DELETE FROM {$table} WHERE ID = $id ";
+        $sql = "DELETE FROM {$table} WHERE MaNV = $id ";
 
         mysqli_query($this->link, $sql) or die(" Lỗi Truy Vấn delete   --- " . mysqli_error($this->link));
         return mysqli_affected_rows($this->link);
@@ -190,7 +204,12 @@ class Database
         $result = mysqli_query($this->link, $sql) or die("Lỗi  truy vấn fetchID " . mysqli_error($this->link));
         return mysqli_fetch_assoc($result);
     }
-
+    public function fetchTKNNK($table, $id)
+    {
+        $sql = "SELECT * FROM {$table} WHERE IDNguoiNhanKhac = '$id' ";
+        $result = mysqli_query($this->link, $sql) or die("Lỗi  truy vấn fetchID " . mysqli_error($this->link));
+        return mysqli_fetch_assoc($result);
+    }
     public function fetchTKNV($table, $id)
     {
         $sql = "SELECT * FROM {$table} WHERE MaNV = '$id' ";
@@ -211,7 +230,7 @@ class Database
     }
     public function fetchBillByUsername($table, $idusername)
     {
-        $sql = "SELECT * FROM {$table} WHERE MaTK = '$idusername'";
+        $sql = "SELECT * FROM {$table} WHERE ID = '$idusername'";
         $result = mysqli_query($this->link, $sql) or die("Lỗi Truy Vấn fetchAll " . mysqli_error($this->link));
         $data = [];
         if ($result) {
@@ -235,9 +254,27 @@ class Database
         $result = mysqli_query($this->link, $sql) or die("Lỗi  truy vấn fetchID " . mysqli_error($this->link));
         return mysqli_fetch_assoc($result);
     }
+    public function fetchCTDHByID($table, $id)
+    {
+        $sql = "SELECT * FROM {$table} WHERE id = '$id' ";
+        $result = mysqli_query($this->link, $sql) or die("Lỗi  truy vấn fetchID " . mysqli_error($this->link));
+        return mysqli_fetch_assoc($result);
+    }
     public function fetchUser($table, $user)
     {
         $sql = "SELECT * FROM {$table} WHERE username = '$user' ";
+        $result = mysqli_query($this->link, $sql) or die("Lỗi  truy vấn fetchID " . mysqli_error($this->link));
+        return mysqli_fetch_assoc($result);
+    }
+    // public function fetchCTDHbyIdDH($table, $user)
+    // {
+    //     $sql = "SELECT * FROM {$table} WHERE  = '$user' ";
+    //     $result = mysqli_query($this->link, $sql) or die("Lỗi  truy vấn fetchID " . mysqli_error($this->link));
+    //     return mysqli_fetch_assoc($result);
+    // }
+    public function fetchCommentById($table, $id)
+    {
+        $sql = "SELECT * FROM {$table} WHERE id = '$id' ";
         $result = mysqli_query($this->link, $sql) or die("Lỗi  truy vấn fetchID " . mysqli_error($this->link));
         return mysqli_fetch_assoc($result);
     }
@@ -260,7 +297,7 @@ class Database
     }
     public function fetchCommentByIdSP($table,$idSP)
     {
-        $sql = "SELECT * FROM {$table} WHERE MaSP=$idSP";
+        $sql = "SELECT * FROM {$table} WHERE MaSP=$idSP and status='1'";
         $result = mysqli_query($this->link, $sql) or die("Lỗi Truy Vấn fetchAll " . mysqli_error($this->link));
         $data = [];
         if ($result) {
@@ -284,7 +321,7 @@ class Database
         }
         return $data;
     }
-    public function fetchAllHoaDoninCTDH($table, $id)
+    public function fetchAllCTHDbyMaHD($table, $id)
     {
         $sql = "SELECT * FROM {$table} WHERE MaDH ='$id'";
         $result = mysqli_query($this->link, $sql) or die("Lỗi Truy Vấn fetchAll " . mysqli_error($this->link));

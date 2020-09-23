@@ -24,7 +24,7 @@ if (!isset($_SESSION['useradmin'])) {
     ?>
 
     <div class="container-fluid pt-48 ">
-        <div class="row ">
+        <div class="row mt-5">
             <?php include("leftAdmin.php") ?>
             <div class="col-md-10 bg-white  ml-sm-auto col-lg-10 px-4">
                 <div class="d-flex justify-content-between pt-3" style=" height: 50px;">

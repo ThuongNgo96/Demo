@@ -68,6 +68,7 @@ if(empty($error))
         <div class="row ">
             <?php include("./../../admin/leftAdmin.php") ?>
             <div class="col-md-10 bg-white  ml-sm-auto col-lg-10 px-4 mt-5">
+            <h1 class=" text-danger text-center">Thêm mới sản phẩm:</h1>
                 <div class="row">
                     <form class="col-8 offset-2" method="post" action="./../../database/sanpham/xulythemsp.php" enctype="multipart/form-data">
                         <div class="form-group">
@@ -93,8 +94,8 @@ if(empty($error))
                             <?php endif  ?>
                         </div>
                         <div class="form-group">
-                            <label for="inputAddress2">Gía giảm</label>
-                            <input type="number" class="form-control" id="inputAddress2" placeholder="400.000" name="pricesell" required>
+                            <label for="inputAddress2">Nhập % giảm giá:</label>
+                            <input type="number" class="form-control" id="inputAddress2" placeholder="%" name="pricesell" required>
                             <?php
                             if (isset($error['pricesell'])) :
                             ?>
@@ -104,6 +105,10 @@ if(empty($error))
                             <?php endif  ?>
                         </div>
 
+
+                        
+
+         
                         <div class="form-group">
                             <label for="inputAddress2">Số lượng</label>
                             <input type="number" class="form-control" id="inputAddress2" placeholder="" name="soluong" required>

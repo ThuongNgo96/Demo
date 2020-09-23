@@ -27,7 +27,7 @@ include("homedanhmuc.php")
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <p class="text-danger"> <?php echo $product['ChiTietSP'] ?></p>
-            <h6 class=" text-danger"> <?php echo number_format($product['DonGia']) ?> đ <span class=" text-dank"> (Đã bao gờm VAT)</span></h6>
+            <h6 class=" text-danger"> <?php echo number_format($product['Gia']) ?> đ <span class=" text-dank"> (Đã bao gờm VAT)</span></h6>
             <p> Giá gốc: <?php echo number_format($product['GiaGoc']) ?> đ </p>
             <button value="<?php echo $product['MaSP'] ?>" class="buy mr-1 text-white btn btn-success"><i class=" fas fa-cart-plus"></i> Mua hàng</button>
         </div>
@@ -36,7 +36,7 @@ include("homedanhmuc.php")
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    Đánh Gía
+                    Đánh Giá Sản Phẩm:
                 </div>
                 <div class="card-body">
                     <div class="card-header">

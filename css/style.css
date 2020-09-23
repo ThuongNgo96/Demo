@@ -82,16 +82,21 @@ background-image: url(./ANH/pink1.jpg);
     border-radius: 150px;
 }
 
-.news {
+.news{
     background-color: pink;
+    
 }
 
 .news a:hover {
     font-style: 130%;
+    text-decoration: none;;
 }
 
 .news a :visited {
     font-style: 130%;
+}
+.news a{
+    text-decoration: none;
 }
 
 .footer {
@@ -215,3 +220,32 @@ background-image: url(./ANH/pink1.jpg);
         -webkit-text-fill-color: transparent;
 }
 
+ ::placeholder { 
+ color: green!important ;
+    size: 30%;
+    opacity: 5;
+} 
+/* ::placeholder :hover{ 
+    color:royalblue!important;
+     
+} */
+
+.form-control.placeholder { /* chạy tốt trên Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(65, 9, 219);
+    opacity: 1; /* Firefox */
+}
+/* .abc.placeholder{
+    color: indigo;
+} */
+input::placeholder:visited { 
+    color: white!important;
+       size: 30%;
+   } 
+ input::placeholder:focus { 
+    color: white!important;
+       size: 30%;
+   } 
+ input::placeholder:hover { 
+    color: white!important;
+       size: 30%;
+   } 

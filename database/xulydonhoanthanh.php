@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo 0;
     }
     // Tìm các dòng đơn hàng từ  bảng chitietDB có id đơn hàng lấy từ XuLyDonTraVe
-    // $chitietDH = $db->fetchAllHoaDoninCTDH('chitietdonhang1', $idDH);
+    // $chitietDH = $db->fetchAllCTHDbyMaHD('chitietdonhang1', $idDH);
     // foreach ($chitietDH as $value) {
     //     // Tìm các sản phẩm bảng sanpham có Masp = Masp trong bảng chitietdonhang
     //     $sanpham = $db->fetchID('sanpham', $value['MaSP']);

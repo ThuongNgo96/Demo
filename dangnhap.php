@@ -18,7 +18,7 @@
                 <img src="./ANH/logo.png"  height="150px" width="170px">
               
                 <h3 class="Login__1st-Row__Form__h3 pt-3 pb-2">Please sign in</h3>
-                <input class=" form-control " type="text" name="username" placeholder="Username">
+                <input class=" form-control btn-outline-success mb-2 abc " type="text" name="username" placeholder="Username" >
                 <!-- <?php
                         if (isset($error['username'])) :
                         ?>
@@ -26,7 +26,7 @@
                 <?php
                         endif
                 ?> -->
-                <input class="form-control " type="password" name="password" placeholder="Password">
+                <input class="form-control btn-outline-success " type="password" name="password" placeholder="Password">
                 <div class=" mt-2">
                     <input type="checkbox">
                     <label>Remember me</label>

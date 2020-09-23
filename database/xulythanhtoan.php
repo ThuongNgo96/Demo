@@ -8,12 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $updateSoLuong = $db->update("sanpham", array('SoLuong' => $soluong), array('MaSP' => $key));
     }
     $data = [
-        'MaTK' => postInput('id'),
+        'ID' => postInput('id'),
         'MaTTDH' => postInput('status'),
         'MaPT' => postInput('mapt'),
-        'TenNguoiNhan' => postInput('tennguoinhan'),
-        'DiaChi' => postInput('diachi'),
-        'SoDienThoai' => postInput('sdt'),
+        // 'TenNguoiNhan' => postInput('tennguoinhan'),
+        // 'DiaChi' => postInput('diachi'),
+        // 'SoDienThoai' => postInput('sdt'),
         'TongTien' => $_SESSION['sum'],
     ];
     $idHoaDon = $db->insert("donhang", $data);
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'MaDH' => $idHoaDon,
                 'MaSP' => $key,
                 'SoLuongMua' => $value['SoLuong'],
-                'Dongia' => $value['DonGia'],
+                'Gia' => $value['Gia'],
             ];
             $idCTHD = $db->insert("chitietdonhang", $data1);
         }

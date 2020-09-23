@@ -7,7 +7,7 @@ include("headAmin.php");
 <link rel="shortcut icon" type="image/png" href="../ANH/icon.jpg">
 <title>Duyet don</title>
 <div class="container-fluid pt-48 pb-5 mt-4 ">
-    <div class="row ">
+    <div class="row margin-top-50">
         <?php include("leftAdmin.php") ?>
         <div class="col-md-10 bg-white  ml-sm-auto col-lg-10 px-4">
             <div class="d-flex justify-content-between pt-3" style=" height: 50px;">
@@ -36,9 +36,15 @@ include("headAmin.php");
                 </thead>
                 <tbody>
                     <?php
-                    $sql = "SELECT * FROM donhang WHERE MaTTDH = '10' or MaTTDH ='1'  order by MaDH asc";
+                    $sql = "SELECT * FROM donhang WHERE MaTTDH ='10' or MaTTDH='1'  order by MaDH asc";
                     $bills = $db->fetchsql($sql);
                     foreach ($bills as $row) {
+                        if ($row['IDNguoiNhanKhac'] == 0 || $row['IDNguoiNhanKhac'] == null){
+                            $TK=$db->fetchTK('taikhoan',$row['ID']);
+                        }else{
+                            $TK=$db->fetchTKNNK('nguoinhankhac',$row['IDNguoiNhanKhac']);
+                        }
+                        // echo $TK['Hoten'];
                         // if ($row['MaNVGiaoHang'] != NULL) {
                         //     var_dump($row['MaNHGiaoHang']);
                         //     die;
@@ -48,9 +54,12 @@ include("headAmin.php");
                     ?>
                         <tr class=" border">
                             <th scope="row"><?php echo $row['MaDH'] ?></th>
-                            <td><?php echo $row['TenNguoiNhan'] ?></td>
-                            <td><?php echo  $row['DiaChi'] ?></td>
-                            <td><?php echo "0" .$row['SoDienThoai'] ?></td>
+                         <td> <?php echo $TK['HoTen'] ?></td>
+                            <td><?php echo  $TK['DiaChi'] ?></td> 
+
+
+                            
+                            <td><?php echo "0" .$TK['SoDienThoai'] ?></td>
                             <td><?php echo $row['NgayDat'] ?></td>
                             <td><?php echo number_format($row['TongTien']) . ' đ' ?></td>
                             <td>
@@ -60,7 +69,7 @@ include("headAmin.php");
                                 <select id="<?php echo $row['MaDH'] ?>inputState" class="form-control" name="TenNV">
                                     <option>Chọn nhân viên...</option>
                                     <?php
-                                    $sql = "SELECT * FROM nhanvien  order by MaNV asc"; // sắp xếp tăng dần 
+                                    $sql = "SELECT * FROM nhanvien where MaPQ='2'  order by MaNV asc "; // sắp xếp tăng dần 
                                     $NhanVien = $db->fetchsql($sql);
                                     foreach ($NhanVien as $key => $row1) {
                                     ?>
@@ -75,12 +84,14 @@ include("headAmin.php");
                                     <?php }?>
                             </td>
                             <td class="d-flex">
+                                
                                 <?php if ($row['MaTTDH'] == 10) { ?>
-                                    <button value="<?php echo $row['MaDH'] ?>" class="duyet m-auto btn btn-warning"> Xử lý </button>
+                                    <button value="<?php echo $row['MaDH'] ?>" class="duyet m-auto btn btn-warning"> Lưu </button>
                                 <?php } else { ?>
-                                    <button disabled value="<?php echo $row['MaDH'] ?>" class="m-auto btn btn-success"> Đã duyệt </button>
-                                    <a href="./ChiTietHoaDon.php?id=<?php echo $row['MaDH'] ?>" class="show m-auto btn btn-primary">Xem hóa đơn </a>
-                                <?php } ?>
+                                    <!-- <button disabled value="<?php echo $row['MaDH'] ?>" class="m-auto btn btn-success"> Đã duyệt </button> -->
+                                   <div class =" text-center"><p> Đã Duyệt </p><div>
+                                    <div> <a href="./ChiTietHoaDon.php?id=<?php echo $row['MaDH'] ?>" class="show m-auto btn btn-success">Xem đơn </a></div>
+                                <?php } ?> 
                             </td>
 
                         </tr>

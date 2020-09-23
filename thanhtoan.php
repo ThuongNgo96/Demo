@@ -31,15 +31,15 @@ $user = $db->fetchUser('taikhoan', $_SESSION['username']);
                         <input class="form-control" value="<?php echo $user['ID'] ?>" type="text" hidden name="id">
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Tên người nhận:</label>
-                            <input class="form-control" value="<?php echo $user['HoTen'] ?>" type="text" name="tennguoinhan">
+                            <input class="form-control" value="<?php echo $user['HoTen'] ?>" type="text" name="tennguoinhan" disabled>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Địa chỉ người nhận:</label>
-                            <input class="form-control" type="text" value="<?php echo $user['DiaChi'] ?>" name="diachi">
+                            <input class="form-control" type="text" value="<?php echo $user['DiaChi'] ?>" name="diachi" disabled>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Số điện thoại:</label>
-                            <input class="form-control" value="<?php echo $user['SoDienThoai'] ?>" type="text" name="sdt">
+                            <input class="form-control" value="<?php echo "0".$user['SoDienThoai'] ?>" type="text" name="sdt" disabled>
                         </div>
                         <input class="form-control" value="10" type="text" hidden name="status">
                         <div class="form-group">
